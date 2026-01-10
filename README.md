@@ -1,7 +1,7 @@
 # Lab 2: Type Systems and Type Checking
 
-**CSC3301 Programming Language Paradigms**  
-**Estimated Time:** 2–3 hours  
+**CSC3301 Programming Language Paradigms**
+**Estimated Time:** 2-3 hours
 **Points:** 100
 
 ---
@@ -74,3 +74,85 @@ Include a 200-word analysis in the docstring.
 | Task 3: Coercion Analysis | 20 |
 | Task 4: Static vs Dynamic | 20 |
 | **Total** | 100 |
+
+---
+
+## Variant System
+
+This lab uses a **variant-based assignment system** to provide each student with unique type coercion examples and type checking expressions.
+
+### How It Works
+
+1. **Automatic Generation**: When you accept this assignment through GitHub Classroom, a unique variant is automatically generated based on your GitHub username.
+
+2. **Variant Configuration**: Your personalized configuration is stored in `.variant_config.json` and includes:
+   - 3 Python type coercion examples
+   - 3 JavaScript type coercion examples
+   - 3 C type coercion examples
+   - 6 type checking expressions for Task 2
+
+3. **Personalized Assignment**: After variant generation, check `ASSIGNMENT.md` for your specific examples and expressions.
+
+### Variant Components
+
+#### Type Coercion Examples
+Each student receives a unique set of type coercion examples from each language:
+
+- **Python**: Examples of implicit type promotion, boolean conversion, string operations
+- **JavaScript**: Examples of type coercion in arithmetic, comparison, and concatenation
+- **C**: Examples of narrowing/widening conversions, signed/unsigned issues
+
+#### Type Checking Expressions
+Students receive different expressions to test their type checker implementation, including:
+- Arithmetic operations with integers and floats
+- String concatenation
+- Boolean operations
+- Comparison expressions
+- Type error cases
+
+### Testing with Variants
+
+The test suite automatically loads your variant configuration:
+
+```bash
+# Run tests with your variant
+pytest tests/visible/ -v
+
+# Tests use fixtures from conftest.py that load .variant_config.json
+```
+
+### Manual Variant Generation
+
+For instructors or testing purposes:
+
+```bash
+# Generate a variant for a specific student
+python scripts/variant_generator.py <student_id>
+
+# Generate the personalized assignment document
+python scripts/generate_assignment.py
+```
+
+### Files Overview
+
+| File | Purpose |
+|------|---------|
+| `scripts/variant_generator.py` | Generates unique variant configuration |
+| `scripts/generate_assignment.py` | Creates personalized ASSIGNMENT.md |
+| `tests/visible/conftest.py` | Pytest fixtures for variant loading |
+| `.variant_config.json` | Generated variant configuration |
+| `ASSIGNMENT_TEMPLATE.md` | Template with placeholders |
+| `ASSIGNMENT.md` | Your personalized assignment |
+
+### Academic Integrity
+
+Each student's variant is deterministically generated from their student ID. Sharing solutions between students will be detected as the examples and expressions differ between variants.
+
+---
+
+## Getting Help
+
+- Review lecture slides on type systems
+- Check the type rules documentation in `src/task2_type_checker.py`
+- Use `mypy` error messages to guide your type annotations
+- Office hours: [See course schedule]
