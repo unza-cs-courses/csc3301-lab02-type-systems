@@ -59,9 +59,9 @@ Include a 200-word analysis in the docstring.
 ## Submission
 
 1. Ensure `mypy --strict` passes on Task 1
-2. All tests pass: `pytest tests/ -v`
+2. Run all tests locally and ensure they pass: `pytest tests/ -v`
 3. Complete `SUBMISSION.md`
-4. Push to trigger autograding
+4. Push your code to your repository before the deadline
 
 ---
 
